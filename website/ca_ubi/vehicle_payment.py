@@ -1,10 +1,10 @@
 from openfisca_us.model_api import *
 
-class ca_vehicle_subsidy_payment(Variable):
+class ca_vehicle_payment(Variable):
     value_type = float
     entity = SPMUnit
     definition_period = YEAR
-    label = "Vehicle subsidy"
+    label = "Vehicle payment"
     
     def formula(spm_unit, period):
         spm_unit_fips = spm_unit("spm_unit_fips", period)
@@ -21,7 +21,7 @@ class spm_unit_is_in_spm_poverty(Variable):
     definition_period = YEAR
 
     def formula(spm_unit, period, parameters):
-        income = spm_unit("spm_unit_net_income", period) + spm_unit("ca_vehicle_subsidy_payment", period)
+        income = spm_unit("spm_unit_net_income", period) + spm_unit("ca_vehicle_payment", period)
         poverty_threshold = spm_unit("spm_unit_spm_threshold", period)
         return income < poverty_threshold
 
@@ -32,7 +32,7 @@ class spm_unit_is_in_deep_spm_poverty(Variable):
     definition_period = YEAR
 
     def formula(spm_unit, period, parameters):
-        income = spm_unit("spm_unit_net_income", period) + spm_unit("ca_vehicle_subsidy_payment", period)
+        income = spm_unit("spm_unit_net_income", period) + spm_unit("ca_vehicle_payment", period)
         poverty_threshold = spm_unit("spm_unit_spm_threshold", period) / 2
         return income < poverty_threshold
 
@@ -40,4 +40,4 @@ class vehicle_subsidy(Reform):
     def apply(self):
         self.update_variable(spm_unit_is_in_spm_poverty)
         self.update_variable(spm_unit_is_in_deep_spm_poverty)
-        self.add_variable(ca_vehicle_subsidy_payment)
+        self.add_variable(ca_vehicle_payment)
