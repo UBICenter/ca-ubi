@@ -1,15 +1,15 @@
-name: reponame
+name: ca-ubi
 dependencies:
 - python
-- plotly
-- pandas
-- numpy
 - pip
 - pip:
   - jupyter-book
-  - "git+https://github.com/PSLmodels/microdf"
+  - microdf_python
   - "git+https://github.com/ubicenter/ubicenter.py"
   - argparse
   - pyyaml
   - pathlib
   - typing
+  - numpy
+  - pandas
+  - plotly

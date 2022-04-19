@@ -6,7 +6,7 @@ title: "An interesting post"
 date: 2021-06-15
 tags: []
 subclass: "post"
-author: nikhil
+author: max
 excerpt: "Some interesting excerpt."
 class: post-template
 useplotly: true
