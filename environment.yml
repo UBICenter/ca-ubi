@@ -1,4 +1,4 @@
-name: ca-ubi
+name: california-vehicle-payment
 dependencies:
 - python
 - pip
