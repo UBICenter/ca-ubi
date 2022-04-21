@@ -1,12 +1,12 @@
 layout: post
 current: post
-cover:
+cover: cars.png
 navigation: True
-title: "An interesting post"
-date: 2021-06-15
-tags: []
+title: What if California gave money to everyone, not only vehicle owners?
+date: 2022-04-21
+tags: [us]
 subclass: "post"
 author: max
-excerpt: "Some interesting excerpt."
+excerpt: Benchmarking Governor Newsom's proposed per-vehicle payment against a per-person payment.
 class: post-template
 useplotly: true
